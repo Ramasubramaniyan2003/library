@@ -1,0 +1,52 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/description.css')
+    link(rel='stylesheet' href='/login.css')
+    title Description
+    include ./login.pug
+    include ./navigation.pug
+//- .container-fluid.nav
+//-     a#home.navbar-brand.mt-4.mx-4(href='/')  MY Books
+//-     ul.navbar-nav.me-auto.mt-2.mt-lg-0
+//-     #navbar.navcomponents
+//-         a#loginbtn.loginbtn(type='button' data-bs-toggle='modal' data-bs-target='#modalId')
+//-             | Login
+//-         a#viewcart.viewcart(href='/viewcart')
+//-             | View cart
+//-         a#logoutbtn.logoutbtn.mx-2(type='button' onclick='logout()')
+//-             | Logout
+//-         a#Name.Name.mx-2(onclick='profile()')
+//-         img(src='/icons/user.png' width='30px' ,height='30px')
+//-         .profile
+.container-fluid
+    .row
+        .mt-3.mx-3.col-sm-4
+            nav(style="--bs-breadcrumb-divider: '>';" aria-label='breadcrumb')
+                ol.breadcrumb
+                    li.breadcrumb-item.breadcrumb.active(aria-current='page')
+                        a(href='/') Home
+                    li#homenav.breadcrumb-item.breadcrumb
+                    li.breadcrumb-item.breadcrumb Book description
+.container.mt-5.py-5
+    .row
+        #image.img.col-sm-4
+        #details.details.col-sm-8
+        #download.download.mt-5.col-sm-2
+        .col-sm-5.genres
+            ul
+                li Genres :
+                li
+                    a(href='/books/types/action') Action
+                li
+                    a(href='/books/types/comedt') Comedy
+                li
+                    a(href='/books/types/classic') Classic
+                li
+                    a(href='books/types/classic') GK
+                li
+                    a(href='books/types/adventure') Adventure
+script(src='/description.js')
+script(src='index.js')

@@ -1,0 +1,120 @@
+.navigation {
+    background-image: linear-gradient(to right, #FF7854 0%, #FF5079 100%)
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.booktopics {
+    display: none;
+    width: 100%;
+}
+
+.navitems p {
+    opacity: 0.3;
+}
+
+/* .navitems:hover{
+    background: rgb(214, 203, 203);
+} */
+.navitems {
+    text-align: center;
+}
+.footer {
+    background-color: #c5375a;
+
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.card {
+    left: 60px;
+}
+
+.card a {
+    color: black;
+    text-decoration: none;
+}
+
+.loginbtn{
+    background-color: transparent;
+    color: white;
+    width: 100px;
+}
+
+.viewcart{
+  display: none;
+}
+
+.logoutbtn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    width: 100px;
+}
+.loginbtn:hover,.logoutbtn:hover,.viewcart:hover,.navbar-brand:hover,#Name:hover{
+ color: rgb(199, 202, 205);
+ cursor: pointer;
+}
+.backicon{
+     background-color:white;
+     border-radius: 50px;
+     color: white;
+}
+.card-body:hover{
+    background-image: linear-gradient(to right, #FF7854 0%, #FF5079 100%);
+    color: white;
+}
+.view{
+    text-decoration: none;
+    color: black;
+}
+.view:hover{
+    color: rgb(231, 229, 229);
+}
+.listgrid{
+  text-align: end;
+} 
+.flexbox{
+    display: grid;
+  grid-template-columns:auto auto auto;
+}
+.footercontainer{
+    margin-top: 50px;
+    width: 33.33%;
+}
+.footercontainer li{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+footer{
+    background-color: #c5375a;
+    height: 150px;
+    
+}
+.gridlist .active1{
+    color: #FF5079;
+  }
+.breadcrumb a{
+    color: black;
+}
+.searchbar{
+    border: none;
+    border-radius: 0px;
+}
+.searchbutton{
+    height: 30px;
+    border: none;
+    border-color: transparent;
+}
+.hidden{
+    display: none;
+}
+.card{
+    width: 12rem;
+}

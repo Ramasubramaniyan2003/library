@@ -1,0 +1,23 @@
+
+.navigation {
+    background-image: linear-gradient(to right, #FF7854 0%, #FF5079 100%)
+}
+                
+#books,.profile,.Name{
+    text-decoration: none;
+    color: white;
+}
+.delete:hover{
+    color: red;
+}
+#books:hover{
+    color:rgb(228, 226, 226);
+}
+.loginbtn:hover,.logoutbtn:hover,.viewcart:hover,.navbar-brand:hover,#Name:hover{
+    color: rgb(199, 202, 205);
+    cursor: pointer;
+   }
+li a{
+    text-decoration: none;
+    color: black;
+}

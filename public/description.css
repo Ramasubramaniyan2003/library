@@ -1,0 +1,86 @@
+.download a {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+
+}
+
+.download {
+    text-align: center;
+}
+
+.download a:hover {
+    background-color: black;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    padding: 10px;
+
+}
+
+li a {
+    color: black;
+}
+
+.genres {
+    margin-left: 13%;
+}
+
+.navi {
+    background-color: #274c77;
+    color: #e7ecef;
+}
+
+.navi a {
+    color: #e7ecef;
+    text-decoration: none;
+}
+.nav {
+    /* top: 0px;
+    /* position: fixed; */
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(to right,#FF7854 0%,#FF5079 100%);
+    color: #e7ecef;
+}
+#navbar a,#home{
+    text-decoration: none;
+    color: white;
+}
+.navcomponents {
+    padding: 38px;
+    width: 80%;
+    text-align: center;
+}
+#navbar{
+    display: flex;
+    justify-content: end;
+}
+.viewcart{
+    display: none;
+  }
+  .loginbtn {
+    background-color: transparent;
+    color: white;
+    width: 100px;
+}
+
+.logoutbtn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    width: 100px;
+}
+.loginbtn:hover,.logoutbtn:hover,.viewcart:hover,.navbar-brand:hover,#Name:hover{
+    color: rgb(199, 202, 205);
+    cursor: pointer;
+   }

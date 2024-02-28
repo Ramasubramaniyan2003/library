@@ -1,0 +1,55 @@
+link(rel='stylesheet' href='/index.css')
+script(src='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')
+#modalId.modal.fade(tabindex='-1' data-bs-backdrop='static' data-bs-keyboard='false' role='dialog' aria-labelledby='modalTitleId' aria-hidden='true')
+  .modal-dialog.modal-dialog-scrollable.modal-dialog-centered.modal(role='document')
+    .modal-content
+      #modal-body.modal-body
+        .modal-header
+          h3#modallogin.mx-4 Login in
+          h3#modalsignup.mx-4.hidden sign up
+          button.btn-close.mb-4(type='button' data-bs-dismiss='modal' aria-label='Close')
+        .modal-body.popupbody
+          #hiddenlogin.box.mx-auto
+            #box
+              #login
+                br
+                form#form
+                  p.mx-4(style="color:black;") Username
+                  input#email.mx-4(type='email' name='email' required='')
+                  p#usernameerror
+                  p.mx-4(style="color:black;") Password
+                  input#password.mx-4(type='password' name='password' required='')
+                  br
+                  br
+                  #demo.mx-4.text-danger
+                  button#sign.mx-4.continue.logbtn(onclick='validate(this.id)' data-bs-dismiss='modal') Continue
+                  hr
+                p.mx-4 Don&apos;t have an account?
+                button#login_account.mx-4.mb-5.createaccount.logbtn(onclick='validate(this.id)')
+                  | Create an
+                  | account
+                br
+          // signup
+          #hiddensignup.box.mx-auto.hidden
+            #login
+              p#response1
+              form#form1
+                p.mx-4 Username
+                input#signupemail.mx-4(type='email' name='signup_email')
+                p#usernameerror
+                p.mx-4 Password
+                input#signuppassword.mx-4(type='password')
+                br
+                br
+                p.mx-4 Re-type Password
+                input#retypepassword.mx-4(type='password' name='signup_password')
+                br
+                #demo.mx-4.text-danger
+                br
+                button#register.mx-4.continue(onclick='validate(this.id)' type='submit') Register
+                hr
+              p.mx-4 Have an account already?
+              button#signup_account.mx-4.mb-4.createaccount(onclick='validate(this.id)') sign in
+              br
+//- script(src='/login.js')
+script(src="index.js")

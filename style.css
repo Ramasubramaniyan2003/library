@@ -1,0 +1,39 @@
+.navigation{
+    background-image: linear-gradient(to right,#FF7854 0%,#FF5079 100%)
+}
+#books,nav a{
+    text-decoration: none;
+    color: white;
+}
+.booktopics{
+    display: none;
+}
+.navitems p{
+    opacity: 0.3;
+}
+/* .navitems:hover{
+    background: rgb(214, 203, 203);
+} */
+.navitems{
+    text-align: center;
+}
+.active a{
+  opacity: 1;
+}
+.box{
+    color: rgb(0, 0, 0); 
+    background-color: rgb(255, 255, 255); 
+    border: 1px solid transparent; 
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); 
+}
+.footer{
+    background-color: #c5375a;
+
+}
+.row a{
+    text-decoration: none;
+    color: white;
+}
+.card{
+    left: 60px;
+}

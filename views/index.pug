@@ -1,0 +1,103 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://kit.fontawesome.com/a076d05399.js')
+  link(rel='stylesheet' href='/login.css')
+  title Library
+  include ./login.pug
+  include navigation.pug
+.container-fluid
+  .row.gridlist
+    .nav-item.text-black.col-sm-4
+      h3#books.mt-3(onclick='books()') Books
+    .mt-3.mx-3.col-sm-6.listgrid(style='float:right;')
+      button#grid.btn.active1(onclick='gridView()')
+        i.fa.fa-th-large
+        |  Grid
+    .mt-3.mx-3.col-sm-1.listgrid
+      button#list.btn(onclick='listView()')
+        i.fa.fa-bars
+        |  List
+  hr
+.mt-5.mx-3.col-sm-2
+  nav(style="--bs-breadcrumb-divider: '>';", aria-label='breadcrumb')
+    ol.breadcrumb
+      li.breadcrumb-item.breadcrumb.active(aria-current='page')
+        a(href='#') Home
+// cards
+.container.flexbox
+  .mt-5.column
+    .card
+      a(href='/books/types/action')
+        img(src='https://books.google.co.in/books/content?id=BebwoOZCPr0C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71uzRs1XWmj8Oo8ONKy-70P4QGpOOJ9_Zfjj6EA2yf2TudU8ZSb9v4PjLYPzrLH-nYfNTaN-JbCrzchkJT066EDR6RgV49V3G2W0fm-Fx4Jau8Sbs6ZxxvvVAmmBGpjqWElW6ra' alt='action' height='200px' width='191px')
+        .card-body
+          h5.card-title.text-center Action
+  .mt-5.column
+    .card
+      a(href='/books/types/classic')
+        img(src='https://i.ebayimg.com/images/g/LREAAOSwFndjFZ-E/s-l1200.webp' alt='classic' height='200px' width='191px')
+        .card-body
+          h5.card-title.text-center Classic
+  .mt-5.column
+    .card
+      a(href='/books/types/history')
+        img(src='outer-img/history.jpeg' alt='action' height='200px' width='191px')
+      .card-body
+        h5.card-title.text-center History
+  .mt-5.column
+    .card
+      a(href='/books/types/comedy')
+        img(src='outer-img/humor.jpeg' alt='action' height='200px' width='191px')
+      .card-body
+        h5.card-title.text-center Comedy
+  .mt-5.column
+    .card
+      a(href='/books/types/general_knowledge')
+        img(src='outer-img/gk.jpeg' alt='action' height='200px' width='191px')
+      .card-body
+        h5.card-title.text-center GK
+  .mt-5.column
+    .card
+      a(href='/books/types/adventure')
+        img(src='outer-img/adventure.jpeg' alt='action' height='200px' width='191px')
+      .card-body
+        h5.card-title.text-center Adventure
+  #randomcard.mt-5.column.hidden
+    .card
+      a(href='/books/types/random')
+        img(src='https://manybooks.net/sites/default/files/2018-07/bookdisplaysmall.jpg' alt='action' height='200px' width='191px')
+      .card-body
+        h5.card-title.text-center pick any books?
+// carosel
+//- #carouselExampleControls.carousel.slide(data-ride='carousel').mt-5
+//-   .carousel-inner
+//-     .carousel-item.active
+//-       img.d-block.w-100(src='https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1689759136-screenshot-2023-07-19-at-10-31-54-64b7ad932786b.png?crop=1.00xw:0.952xh;0,0.0346xh&resize=980:*' alt='First slide' width="100px" height="450px")
+//-     .carousel-item
+//-       img.d-block.w-100(src='...' alt='Second slide')
+//-     .carousel-item
+//-       img.d-block.w-100(src='...' alt='Third slide')
+//-   a.carousel-control-prev(href='#carouselExampleControls' role='button' data-slide='prev')
+//-     span.carousel-control-prev-icon(aria-hidden='true')
+//-     span.sr-only Previous
+//-   a.carousel-control-next(href='#carouselExampleControls' role='button' data-slide='next')
+//-     span.carousel-control-next-icon(aria-hidden='true')
+//-     span.sr-only Next
+
+footer.text-center
+  .mt-5
+    section
+      i.fa.fa-instagram.mt-5.mx-2(style='font-size:30px;color: white;')
+      i.fa.fa-twitter.mx-2(style='font-size:30px;color:white')
+      i.fa.fa-envelope.mx-2(style='font-size:30px;color: white;')
+      i.fa.fa-github.mx-2(style='font-size: 30px;color: white;')
+      i.fa.fa-linkedin-square.mx-2(style='font-size:24px;color: white;')
+    .cont.mt-3
+      p.text-white Mail: cecsramasubramaniyan24@gmail.com
+script(src='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')
+//-  script(src='/index.js')
+
+

@@ -1,0 +1,56 @@
+.box {
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    width: 407px;
+    height: max-content;
+    background-color:white;
+    
+}
+.center {
+    display: flex;
+    justify-content: center;
+
+}
+input,.logbtn,#register,#signup_account{
+    width: 350px;
+    height: 35px;
+    border-radius: 7px;
+    /* border: solid 2px rgb(136, 103, 103); */
+}
+.continue {
+    background-color:#90d410;
+    color: white;
+    border-color: #a0ef0e;
+    border-radius: 5px;
+}
+
+.continue a {
+    color: white;
+    text-decoration: none;
+}
+
+.createaccount {
+    color: #fff;
+    background-color: #46ab09;
+    border-color: #3c9308;
+    border-radius: 5px;
+}
+
+.continue:hover {
+    color: #fff;
+    background-color: #a2ec1a;
+}
+
+.createaccount:hover {
+    color: #fff;
+    background-color: #327b06;
+    border-color: #245905;
+}
+
+.hidden {
+    display: none;
+}
+#modallogin,#modalsignup{
+    color: black;
+}
+

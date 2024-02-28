@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <title>Library</title>
+</head>
+
+<body>
+    <div class="container-fluid nav">
+        <a href="/" class="navbar-brand mt-4 mx-4" id="home"> MY Books</a>
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        </ul>
+        <div class="navcomponents" id="navbar">
+                <a type="button" class="loginbtn" data-bs-toggle="modal" data-bs-target="#modalId"
+                id="loginbtn" >
+                Login
+            </a>
+            <a href="/viewcart" class="viewcart" id="viewcart">
+                View cart
+            </a>
+            <a type="button" onclick="logout()" class="logoutbtn mx-2" id="logoutbtn">
+                Logout
+            </a>
+            <a id="Name" class="Name mx-2" onclick="profile()"></a><img src="/icons/user.png" width="30px"
+                ,height="30px" />
+            <div class="profile">
+
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">My cart</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Book added
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-success" data-bs-dismiss="modal">OK</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="nav1" class="col-sm-5 mt-3">
+
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="mt-5 mx-3 col-sm-2">
+        <nav style="--bs-breadcrumb-divider: '&gt;';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item breadcrumb active" aria-current="page"><a href="/">Books</a></li>
+                 <li class="breadcrumb-item breadcrumb hidden" id="homenav"></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container">
+        <div id="innerdiv" class="row mt-3">
+            <div id="img1" class="col-sm-3 mt-5">
+
+            </div>
+            <div id="details1" class="col-sm-6 mt-5 details">
+                
+            </div>
+            
+            <div id="Download1" class="col-sm-2 my-auto  download">
+                <div id="addtocart1" class="addtocart mb-4 mx-4" data-bs-toggle="modal" data-bs-target="#myModal">
+                </div>
+            </div>
+
+            <div id="img2" class="col-sm-3 mt-5">
+
+            </div>
+            <div id="details2" class="col-sm-6 mt-5 details">
+
+            </div>
+            <div id="Download2" class="col-sm-2 my-auto download">
+                <div id="addtocart2" class="addtocart mb-4 mx-4" data-bs-toggle="modal" data-bs-target="#myModal">
+
+                </div>
+            </div>
+            <div id="img3" class="col-sm-3 mt-5">
+
+            </div>
+            <div id="details3" class="col-sm-6 mt-5 details">
+
+            </div>
+            <div id="Download3" class="col-sm-2 my-auto download">
+
+                <div id="addtocart3" class="addtocart mb-4 mx-4" data-bs-toggle="modal" data-bs-target="#myModal">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="/home.js"></script>
+
+</body>
+
+</html>
