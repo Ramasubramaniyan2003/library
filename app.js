@@ -303,7 +303,6 @@ app.post('/books/types/addtocart', async (req, res) => {
     } catch(e) {
         console.log("fetching error in cart page",e);
     }
-
     return res.json({ success: true });
 })
 //delete cart 
