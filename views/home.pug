@@ -11,41 +11,48 @@ head
     title Library
     include ./login.pug
     include ./navigation.pug
-// The Modal
-#myModal.modal
-    .modal-dialog
-        .modal-content
-            .modal-header
-                .modal-title My cart
-                button.btn-close(type='button' data-bs-dismiss='modal')
-            .modal-body
-                | Book added
-            .modal-footer
-                a.btn.btn-success(type='button' data-bs-dismiss='modal') OK
-.container-fluid
-    .row
-        #nav1.col-sm-5.mt-3
-    hr
-.mt-5.mx-3.col-sm-2
-  nav(style="--bs-breadcrumb-divider: '>';", aria-label='breadcrumb')
-    ol.breadcrumb
-      li.breadcrumb-item.breadcrumb.active(aria-current='page')
-        a(href='/') Home
-      li#homenav.breadcrumb-item.breadcrumb
-.container
-    #innerdiv.row.mt-3
-        #img1.col-sm-3.mt-5
-        #details1.col-sm-6.mt-5.details
-        #Download1.col-sm-2.my-auto.download
-            #addtocart1.addtocart.mb-4.mx-4(data-bs-toggle='modal' data-bs-target='#myModal')
-        #img2.col-sm-3.mt-5
-        #details2.col-sm-6.mt-5.details
-        #Download2.col-sm-2.my-auto.download
-            #addtocart2.addtocart.mb-4.mx-4(data-bs-toggle='modal' data-bs-target='#myModal')
-        #img3.col-sm-3.mt-5
-        #details3.col-sm-6.mt-5.details
-        #Download3.col-sm-2.my-auto.download
-            #addtocart3.addtocart.mb-4.mx-4(data-bs-toggle='modal' data-bs-target='#myModal')
-script(src='/home.js')
-script(src="index.js")
+// The Modal                
+body
+    .container-fluid
+        .row
+            #nav1.col-sm-5.mt-3
+        hr
+    .mt-5.mx-3.col-sm-5
+        nav(style="--bs-breadcrumb-divider: '/';", aria-label='breadcrumb')
+            ol.breadcrumb
+                li.breadcrumb-item.breadcrumb
+                    a(href='/') Home
+                li.breadcrumb-item.breadcrumb.active(aria-current='page')#homepage
+                    a(href='#') 
+                li.breadcrumb-item.breadcrumb.breadhidden
+                    a(href='#') description    
+                li.breadcrumb-item.breadcrumb.breadhidden
+                    a(href='#') viewcart  
+    .container.pophidden#popup
+        .container.p-5
+            .row.no-gutters
+                .col-lg-6.col-md-12.m-auto
+                    #box1.alert.alert-success.alert-dismissible.fade.show
+                        button#close.btn-close(type='button' data-bs-dismiss='alert') 
+                        b  Success! 
+                        |  This alert box indicates a successful or positive action.                 
+    .container.mb-5
+        #innerdiv.row.mt-3
+            #img1.col-sm-3.mt-5
+            #details1.col-sm-6.mt-5.details
+            #Download1.col-sm-2.my-auto.download
+                #addtocart1.addtocart.mb-4.mx-4
+            #img2.col-sm-3.mt-5
+            #details2.col-sm-6.mt-5.details
+            #Download2.col-sm-2.my-auto.download
+                #addtocart2.addtocart.mb-4.mx-4
+            #img3.col-sm-3.mt-5
+            #details3.col-sm-6.mt-5.details
+            #Download3.col-sm-2.my-auto.download
+                #addtocart3.addtocart.mb-4.mx-4
+    script(src='/home.js')
+    //- script(src="index.js")
+    script(src='/login.js')
+
+
 

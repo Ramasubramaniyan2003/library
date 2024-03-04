@@ -5,99 +5,189 @@ head
   link(rel='stylesheet' href='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   script(src='https://kit.fontawesome.com/a076d05399.js')
+  script(src="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js")
   link(rel='stylesheet' href='/login.css')
-  title Library
+  title MyBooks
   include ./login.pug
   include navigation.pug
-.container-fluid
-  .row.gridlist
-    .nav-item.text-black.col-sm-4
-      h3#books.mt-3(onclick='books()') Books
-    .mt-3.mx-3.col-sm-6.listgrid(style='float:right;')
-      button#grid.btn.active1(onclick='gridView()')
-        i.fa.fa-th-large
-        |  Grid
-    .mt-3.mx-3.col-sm-1.listgrid
-      button#list.btn(onclick='listView()')
-        i.fa.fa-bars
-        |  List
-  hr
-.mt-5.mx-3.col-sm-2
-  nav(style="--bs-breadcrumb-divider: '>';", aria-label='breadcrumb')
-    ol.breadcrumb
-      li.breadcrumb-item.breadcrumb.active(aria-current='page')
-        a(href='#') Home
-// cards
-.container.flexbox
-  .mt-5.column
-    .card
-      a(href='/books/types/action')
-        img(src='https://books.google.co.in/books/content?id=BebwoOZCPr0C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71uzRs1XWmj8Oo8ONKy-70P4QGpOOJ9_Zfjj6EA2yf2TudU8ZSb9v4PjLYPzrLH-nYfNTaN-JbCrzchkJT066EDR6RgV49V3G2W0fm-Fx4Jau8Sbs6ZxxvvVAmmBGpjqWElW6ra' alt='action' height='200px' width='191px')
-        .card-body
-          h5.card-title.text-center Action
-  .mt-5.column
-    .card
-      a(href='/books/types/classic')
-        img(src='https://i.ebayimg.com/images/g/LREAAOSwFndjFZ-E/s-l1200.webp' alt='classic' height='200px' width='191px')
-        .card-body
-          h5.card-title.text-center Classic
-  .mt-5.column
-    .card
-      a(href='/books/types/history')
-        img(src='outer-img/history.jpeg' alt='action' height='200px' width='191px')
-      .card-body
-        h5.card-title.text-center History
-  .mt-5.column
-    .card
-      a(href='/books/types/comedy')
-        img(src='outer-img/humor.jpeg' alt='action' height='200px' width='191px')
-      .card-body
-        h5.card-title.text-center Comedy
-  .mt-5.column
-    .card
-      a(href='/books/types/general_knowledge')
-        img(src='outer-img/gk.jpeg' alt='action' height='200px' width='191px')
-      .card-body
-        h5.card-title.text-center GK
-  .mt-5.column
-    .card
-      a(href='/books/types/adventure')
-        img(src='outer-img/adventure.jpeg' alt='action' height='200px' width='191px')
-      .card-body
-        h5.card-title.text-center Adventure
-  #randomcard.mt-5.column.hidden
-    .card
-      a(href='/books/types/random')
-        img(src='https://manybooks.net/sites/default/files/2018-07/bookdisplaysmall.jpg' alt='action' height='200px' width='191px')
-      .card-body
-        h5.card-title.text-center pick any books?
-// carosel
-//- #carouselExampleControls.carousel.slide(data-ride='carousel').mt-5
-//-   .carousel-inner
-//-     .carousel-item.active
-//-       img.d-block.w-100(src='https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1689759136-screenshot-2023-07-19-at-10-31-54-64b7ad932786b.png?crop=1.00xw:0.952xh;0,0.0346xh&resize=980:*' alt='First slide' width="100px" height="450px")
-//-     .carousel-item
-//-       img.d-block.w-100(src='...' alt='Second slide')
-//-     .carousel-item
-//-       img.d-block.w-100(src='...' alt='Third slide')
-//-   a.carousel-control-prev(href='#carouselExampleControls' role='button' data-slide='prev')
-//-     span.carousel-control-prev-icon(aria-hidden='true')
-//-     span.sr-only Previous
-//-   a.carousel-control-next(href='#carouselExampleControls' role='button' data-slide='next')
-//-     span.carousel-control-next-icon(aria-hidden='true')
-//-     span.sr-only Next
+body
+  .container-fluid
+    .row.gridlist
+      .nav-item.col-sm-4.mt-3
+        .div.dropdown
+          a.btn.dropdown-toggle#dropdownMenuButton1(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+            |Home
+          ul.dropdown-menu(aria-labelledby="dropdownMenuButton1")
+            li
+              a.dropdown-item(href="/#genres") Genres
+            li
+              a.dropdown-item(href="/#recenttrending") Recent Trending
+            li
+              a.dropdown-item(href="/#contact") Contact
+      .mt-3.mx-3.col-sm-6.listgrid(style='float:right;')
+        button#grid.btn.active1(onclick='gridView()')
+          i.fa.fa-th-large
+          |  Grid
+      .mt-3.mx-3.col-sm-1
+        button#list.btn(onclick='listView()')
+          i.fa.fa-bars
+          |  List
+    hr
+  .row  
+    .mt-2.mx-3.col-sm-5
+      nav(style="--bs-breadcrumb-divider: '/';", aria-label='breadcrumb')
+        ol.breadcrumb
+          li.breadcrumb-item.breadcrumb.active(aria-current='page').breadhidden
+            a(href='#') Home
+          li.breadcrumb-item.breadcrumb.breadhidden
+            a(href='#') 
+          li.breadcrumb-item.breadcrumb.breadhidden
+            a(href='#') description    
+          li.breadcrumb-item.breadcrumb.breadhidden
+            a(href='#') viewcart            
 
-footer.text-center
-  .mt-5
-    section
-      i.fa.fa-instagram.mt-5.mx-2(style='font-size:30px;color: white;')
-      i.fa.fa-twitter.mx-2(style='font-size:30px;color:white')
-      i.fa.fa-envelope.mx-2(style='font-size:30px;color: white;')
-      i.fa.fa-github.mx-2(style='font-size: 30px;color: white;')
-      i.fa.fa-linkedin-square.mx-2(style='font-size:24px;color: white;')
-    .cont.mt-3
-      p.text-white Mail: cecsramasubramaniyan24@gmail.com
-script(src='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')
-//-  script(src='/index.js')
+  .container-fluid.carouselcolor
+    #carouselId.carousel.slide(data-bs-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-bs-target='#carouselId' data-bs-slide-to='0' aria-current='true' aria-label='First slide')
+        li(data-bs-target='#carouselId' data-bs-slide-to='1' aria-label='Second slide')
+        li(data-bs-target='#carouselId' data-bs-slide-to='2' aria-label='Third slide')
+      .carousel-inner(role='listbox')
+        .carousel-item.active
+          img.w-100.d-block.carouselcolor(src='https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?cs=srgb&dl=pexels-pixabay-159711.jpg&fm=jpg' alt='First slide' width='250px' height='400px')
+          .carousel-caption.d-none.d-md-block
+            h3 LOTS OF EBOOKS. 100 % FREE
+            p
+              | Welcome to your friendly neighborhood library. We have more free ebooks waiting to be discovered.
+        .carousel-item
+          img.w-100.d-block.carouselcolor(src='https://c0.wallpaperflare.com/preview/225/688/962/retail-library-shelving-market.jpg' alt='Second slide' width='250px' height='400px')
+          .carousel-caption.d-none.d-md-block
+            h3 The Ultimate Guide to Free eBooks
+            p Not sure what to read next? Explore our catalog of public domain books with our editors. Some real gems are hidden in our library. 
+        .carousel-item
+          img.w-100.d-block.carouselcolor(src='https://c4.wallpaperflare.com/wallpaper/921/547/601/gravity-falls-wallpaper-preview.jpg' alt='Third slide' width='250px' height='400px')
+          .carousel-caption.d-none.d-md-block
+            h3 New Discoveries
+            p  Uncover hidden gems and new authors as our collection grows and evolves.
+        button.carousel-control-prev(type='button' data-bs-target='#carouselId' data-bs-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+            span.visually-hidden Previous
+        button.carousel-control-next(type='button' data-bs-target='#carouselId' data-bs-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+            span.visually-hidden Next
+  // cards
+  .container
+    h3.mt-5.mx-5#genres Genres
+    .flexbox.mt-2
+      .column
+        .card.mt-5
+          a(href='/books/types/action')
+            img(src='/images/action/book1.jpg' alt='action' height='200px' width='191px').listview
+            .card-body
+              h5.card-title.text-center Action
+      .column
+        .card.mt-5
+          a(href='/books/types/classic')
+            img(src='https://i.ebayimg.com/images/g/LREAAOSwFndjFZ-E/s-l1200.webp' alt='classic' height='200px' width='191px').listview
+            .card-body
+              h5.card-title.text-center Classic
+      .column
+        .card.mt-5
+          a(href='/books/types/history')
+            img(src='outer-img/history.jpeg' alt='action' height='200px' width='191px').listview
+            .card-body
+              h5.card-title.text-center History
+      .column.mt-5
+        .card
+          a(href='/books/types/comedy')
+            img(src='outer-img/humor.jpeg' alt='action' height='200px' width='191px').listview
+            .card-body
+              h5.card-title.text-center Comedy
+      .column.mt-5
+        .card
+          a(href='/books/types/general_knowledge')
+            img(src='outer-img/gk.jpeg' alt='action' height='200px' width='191px').listview
+            .card-body
+              h5.card-title.text-center GK
+      .column.mt-5
+        .card
+          a(href='/books/types/adventure')
+            img(src='outer-img/adventure.jpeg' alt='action' height='200px' width='191px').listview
+            .card-body
+              h5.card-title.text-center Adventure
+      #randomcard.mt-5.column.hidden
+        .card
+          a(href='/books/types/random')
+            img(src='https://manybooks.net/sites/default/files/2018-07/bookdisplaysmall.jpg' alt='action' height='200px' width='191px').listview
+            .card-body
+             h5.card-title.text-center pick any books?
+
+        //carousel
+    h3.mt-5.mx-5#recenttrending.mb-5 Recent Trending
+  .container
+    #carouselExampleIndicators2.carousel.slide(data-bs-ride='carousel')
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#carouselExampleIndicators2' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#carouselExampleIndicators2' data-bs-slide-to='1' aria-label='Slide 2')
+        button(type='button' data-bs-target='#carouselExampleIndicators2' data-bs-slide-to='2' aria-label='Slide 3')
+        button(type='button' data-bs-target='#carouselExampleIndicators2' data-bs-slide-to='3' aria-label='Slide 4')
+      .carousel-inner.mt-4
+        .carousel-item.active(style="text-align:center;")
+          .row
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/action/book1.jpg' alt='...' height="270px")
+              br 
+              p.mt-2.bookcarouselheading
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/adventure/book3.jpg' alt='...' height="270px")
+              br
+              p.mt-5.bookcarouselheading 
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/classic/book2.jpg' alt='...' height="270px")
+              br
+              p.mt-2.bookcarouselheading 
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/gk/book2.jpg' alt='...' height="270px")
+              br
+              p.mt-2.bookcarouselheading 
+        .carousel-item(style="text-align:center;")
+          .row
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/history/book1.jpg' alt='...' height="270px")
+              br
+              p.bookcarouselheading.mt-2
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/humor/book2.jpg' alt='...' height="270px")
+              br
+              p.bookcarouselheading.mt-2  
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/history/book3.jpg' alt='...' height="270px")
+              br
+              p.bookcarouselheading.mt-2 
+            .col-sm-3.bookcarouselimage
+              //- img(src='/images/history/book3.jpg' alt='...' height="270px")
+              br
+              //- h2.mt-2 
+              p.bookcarouselheading.mt-5
+      button.carousel-control-prev.mb-auto.pl-5(type='button' data-bs-target='#carouselExampleIndicators2' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next.mb-auto.pl-5(type='button' data-bs-target='#carouselExampleIndicators2' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+
+  //footer
+  footer.text-center#contact
+    .mt-5
+      section
+        i.fa.fa-instagram.mt-5.mx-2(style='font-size:30px;color: white;')
+        i.fa.fa-twitter.mx-2(style='font-size:30px;color:white')
+        i.fa.fa-envelope.mx-2(style='font-size:30px;color: white;')
+        i.fa.fa-github.mx-2(style='font-size: 30px;color: white;')
+        i.fa.fa-linkedin-square.mx-2(style='font-size:24px;color: white;')
+      .cont.mt-3
+        p.text-white Mail: cecsramasubramaniyan24@gmail.com
+  script(src='/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')
+  script(src='/index.js')
 
 

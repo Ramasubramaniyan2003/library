@@ -6,19 +6,19 @@ head
     link(rel='stylesheet' href='mycart.css')
     link(rel='stylesheet' href='bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css')
     link(rel='stylesheet' href='/index.css')
-    include login.pug
-    include navigation.pug
-    
-.mt-2
-    h1.mx-3 My cart
-    hr
-nav(style="--bs-breadcrumb-divider: '>';" aria-label='breadcrumb')
-  ol.breadcrumb
-    li.breadcrumb-item.breadcrumb.active(aria-current='page')
-      a(href='/') Books
-    li#homenav.breadcrumb-item.breadcrumb
-    li.breadcrumb-item.breadcrumb
-    li.breadcrumb-item.breadcrumb view cart
-#cartitems.mycartitems.mt-2.mx-3
-    #cartimage.row
+    link(rel='stylesheet' href='/login.css')
+body 
+  include login.pug
+  include navigation.pug
+  .mt-2
+      h1.mx-3 My cart
+      hr
+      button.btn.btn-primary.resetbutton(onclick="reset()") Reset
+  #cartitems.mycartitems.mt-2.mx-3
+      #cartimage.row
+  .emptycart
+    img(src="outer-img/emptycart.png", alt="empty").cartimg#cartimghidden 
 script(src='mycart.js')
+script(src='/login.js')
+
+

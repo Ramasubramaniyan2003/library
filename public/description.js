@@ -1,9 +1,19 @@
 var path = window.location.pathname;
 var homenav=document.getElementById('homenav');
-var homenavi=sessionStorage.getItem("home",homenav);
-console.log('home navi--->',homenavi);
-homenav.innerHTML=`${homenavi}`;
-
+var home=sessionStorage.getItem('homenav');
+var desc=document.getElementById('homepage');
+if(desc!=null && home != null){
+    var homepath=home.toLowerCase();
+    desc.innerHTML=`<a href="/books/types/${homepath}">${home}`;
+    sessionStorage.setItem("description",'Description');
+}
+else{
+   desc.style.display="none";
+   console.log("home not null condition")
+}
+var booktype = window.location.pathname;
+var booktype = booktype.substring(booktype.lastIndexOf('/') + 1, booktype.length);
+var homenav1=document.getElementById('homenav1');
 if (path.substring(1, path.lastIndexOf('/')) == "description/action") {
 fetch("/getdata/action").then(
     res => {
@@ -16,33 +26,14 @@ fetch("/getdata/action").then(
     }
 ).then(
     data => {
-        displaydata = data;
+        displaydata = data.data;
+        authorname=data.authorname;
     }
 ).catch(error => {
     console.log(error);
 }
 ).then(process => {
-    var str = path.substring(path.lastIndexOf('/') + 1, path.length);
-    console.log("number::",str);
-    var num = Number.parseInt(str);
-    console.log(displaydata);
-   
-    var img = document.getElementById('image');
-    var imginsert = document.createElement('div');
-    var dts = document.getElementById('details');
-    var dtsinsert = document.createElement('div');
-    var downloadbutton = document.getElementById('download');
-    var downloadbtninsert = document.createElement('div');
-    imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
-    dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
-                            <p>${displaydata[num - 1].author_name}</p>
-                            <p>${displaydata[num - 1].description}</p>
-                            <p>Rating- ${displaydata[num - 1].rating}</p>
-                            <p>views- ${displaydata[num - 1].views}</p>`
-    downloadbtninsert.innerHTML = `<a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>`
-    img.appendChild(imginsert);
-    dts.appendChild(dtsinsert);
-    downloadbutton.appendChild(downloadbtninsert);
+    descriptionfetching(displaydata,authorname)
 })
 }
 
@@ -61,35 +52,14 @@ if (path.substring(1, path.lastIndexOf('/')) == "description/classic") {
         }
     ).then(
         data => {
-            displaydata = data;
+            displaydata = data.data;
+            authorname=data.authorname;
         }
     ).catch(error => {
         console.log(error);
     }
     ).then(process => {
-
-        var path = window.location.pathname;
-        console.log(path);
-        var str = path.substring(path.lastIndexOf('/') + 1, path.length);
-        console.log(str);
-        var num = Number.parseInt(str);
-        console.log(num);
-        var img = document.getElementById('image');
-        var imginsert = document.createElement('div');
-        var dts = document.getElementById('details');
-        var dtsinsert = document.createElement('div');
-        var downloadbutton = document.getElementById('download');
-        var downloadbtninsert = document.createElement('div');
-        imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
-        dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
-                            <p>${displaydata[num - 1].author_name}</p>
-                            <p>${displaydata[num - 1].description}</p>
-                            <p>Rating- ${displaydata[num - 1].rating}</p>
-                            <p>views- ${displaydata[num - 1].views}</p>`
-        downloadbtninsert.innerHTML = `<a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>`
-        img.appendChild(imginsert);
-        dts.appendChild(dtsinsert);
-        downloadbutton.appendChild(downloadbtninsert);
+        descriptionfetching(displaydata,authorname)
     })
 }
 // history
@@ -106,35 +76,14 @@ if (path.substring(1, path.lastIndexOf('/')) == "description/history") {
         }
     ).then(
         data => {
-            displaydata = data;
+            displaydata = data.data;
+            authorname=data.authorname;
         }
     ).catch(error => {
         console.log(error);
     }
     ).then(process => {
-
-        var path = window.location.pathname;
-        console.log(path);
-        var str = path.substring(path.lastIndexOf('/') + 1, path.length);
-        console.log(str);
-        var num = Number.parseInt(str);
-        console.log(num);
-        var img = document.getElementById('image');
-        var imginsert = document.createElement('div');
-        var dts = document.getElementById('details');
-        var dtsinsert = document.createElement('div');
-        var downloadbutton = document.getElementById('download');
-        var downloadbtninsert = document.createElement('div');
-        imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
-        dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
-                            <p>${displaydata[num - 1].author_name}</p>
-                            <p>${displaydata[num - 1].description}</p>
-                            <p>Rating- ${displaydata[num - 1].rating}</p>
-                            <p>views- ${displaydata[num - 1].views}</p>`
-        downloadbtninsert.innerHTML = `<a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>`
-        img.appendChild(imginsert);
-        dts.appendChild(dtsinsert);
-        downloadbutton.appendChild(downloadbtninsert);
+        descriptionfetching(displaydata,authorname)
     })
 }
 // comedy
@@ -151,35 +100,14 @@ if (path.substring(1, path.lastIndexOf('/')) == "description/comedy") {
         }
     ).then(
         data => {
-            displaydata = data;
+            displaydata = data.data;
+            authorname=data.authorname;
         }
     ).catch(error => {
         console.log(error);
     }
     ).then(process => {
-
-        var path = window.location.pathname;
-        console.log(path);
-        var str = path.substring(path.lastIndexOf('/') + 1, path.length);
-        console.log(str);
-        var num = Number.parseInt(str);
-        console.log(num);
-        var img = document.getElementById('image');
-        var imginsert = document.createElement('div');
-        var dts = document.getElementById('details');
-        var dtsinsert = document.createElement('div');
-        var downloadbutton = document.getElementById('download');
-        var downloadbtninsert = document.createElement('div');
-        imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
-        dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
-                            <p>${displaydata[num - 1].author_name}</p>
-                            <p>${displaydata[num - 1].description}</p>
-                            <p>Rating- ${displaydata[num - 1].rating}</p>
-                            <p>views- ${displaydata[num - 1].views}</p>`
-        downloadbtninsert.innerHTML = `<a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>`
-        img.appendChild(imginsert);
-        dts.appendChild(dtsinsert);
-        downloadbutton.appendChild(downloadbtninsert);
+        descriptionfetching(displaydata,authorname)
     })
 }
 // adventure
@@ -196,36 +124,14 @@ if (path.substring(1, path.lastIndexOf('/')) == "description/adventure") {
         }
     ).then(
         data => {
-            displaydata = data;
+            displaydata = data.data;
+            authorname=data.authorname;
         }
     ).catch(error => {
         console.log(error);
     }
     ).then(process => {
-      console.ogg(displaydata)
-        var path = window.location.pathname;
-        console.log(path);
-        var str = path.substring(path.lastIndexOf('/') + 1, path.length);
-        console.log(str);
-        var num = Number.parseInt(str);
-        console.log(num);
-        var img = document.getElementById('image');
-        var imginsert = document.createElement('div');
-        var dts = document.getElementById('details');
-        var dtsinsert = document.createElement('div');
-        var downloadbutton = document.getElementById('download');
-        var downloadbtninsert = document.createElement('div');
-        imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
-        dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
-                            <p>${displaydata[num - 1].author_name}</p>
-                            <p>${displaydata[num - 1].description}</p>
-                            <p>Rating- ${displaydata[num - 1].rating}</p>
-                            <p>views- ${displaydata[num - 1].views}</p>`
-        downloadbtninsert.innerHTML = `<a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>`
-        console.log("path:", displaydata[num - 1].book_path)
-        img.appendChild(imginsert);
-        dts.appendChild(dtsinsert);
-        downloadbutton.appendChild(downloadbtninsert);
+        descriptionfetching(displaydata,authorname)
     })
 }
 // gk
@@ -242,36 +148,45 @@ if (path.substring(1, path.lastIndexOf('/')) == "description/gk") {
         }
     ).then(
         data => {
-            displaydata = data;
+            displaydata = data.data;
+            authorname=data.authorname;
         }
     ).catch(error => {
         console.log(error);
     }
     ).then(process => {
-
-        var path = window.location.pathname;
-        console.log(path);
-        var str = path.substring(path.lastIndexOf('/') + 1, path.length);
-        console.log(str);
-        var num = Number.parseInt(str);
-        console.log(num);
-        var img = document.getElementById('image');
-        var imginsert = document.createElement('div');
-        var dts = document.getElementById('details');
-        var dtsinsert = document.createElement('div');
-        var downloadbutton = document.getElementById('download');
-        var downloadbtninsert = document.createElement('div');
-        imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
-        dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
-                            <p>${displaydata[num - 1].author_name}</p>
-                            <p>${displaydata[num - 1].description}</p>
-                            <p>Rating- ${displaydata[num - 1].rating}</p>
-                            <p>views- ${displaydata[num - 1].views}</p>`
-        downloadbtninsert.innerHTML = `<a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>`
-        img.appendChild(imginsert);
-        dts.appendChild(dtsinsert);
-        downloadbutton.appendChild(downloadbtninsert);
+        descriptionfetching(displaydata,authorname)
     })
+}
+
+function descriptionfetching(displaydata,authorname){
+    console.log(displaydata)
+    console.log(authorname);
+    var str = path.substring(path.lastIndexOf('/') + 1, path.length);
+    console.log("number::",str);
+    var num = Number.parseInt(str);
+    var img = document.getElementById('image');
+    var imginsert = document.createElement('div');
+    var dts = document.getElementById('details');
+    var dtsinsert = document.createElement('div');
+    var downloadbutton = document.getElementById('download');
+    var downloadbtninsert = document.createElement('div');
+    imginsert.innerHTML = `<img src='${displaydata[num - 1].imagePath}' height=350px,width=250px />`
+    dtsinsert.innerHTML = `<h3>${displaydata[num - 1].name}</h3>
+                            <p>${authorname[num - 1].authorName}</p>
+                            <p style="text-align:start;">${displaydata[num - 1].description}</p>
+                            <p><strong>Rating-</strong> </p>
+                            <p><strong>views-</strong> </p>
+                            <p><strong>publisher</strong> :${displaydata[num-1].publisher}</p>
+                            <p><strong>publishedDate</strong> :${displaydata[num-1].publishedDate}</p>
+                            <p><strong>Language</strong> :${displaydata[num-1].language}</p>
+                            <p><strong>ISBN</strong> :${displaydata[num-1].ISBN}</p>
+                            <p><strong>No.of.pages</strong> :${displaydata[num-1].numberOfPages}</p>`
+    downloadbtninsert.innerHTML = `<div class="downloadbutton"><a href="/downloaddata${displaydata[num - 1].bookPath}">Download</a>
+                               </div>`
+    img.appendChild(imginsert);
+    dts.appendChild(dtsinsert);
+    downloadbutton.appendChild(downloadbtninsert);
 }
 function login_and_logout() {
     var loginbtn = document.getElementById('loginbtn');
@@ -298,7 +213,5 @@ function logout() {
     var name = document.getElementById('Name');
     name.innerHTML = ``; 
 }
-// var homenav=document.getElementById('homenav');
-// var homenavi=sessionStorage.removeItem("home",homenav);
-// homenav.innerHTML=``;
+sessionStorage.setItem("description",'Description');
 

@@ -9,7 +9,8 @@ const Cart = sq.define('Cart', {
         autoIncrement:true
     },
     bookId:{
-       type:DataTypes.JSONB
+       type:DataTypes.JSONB,
+       defaultValue: []
     }
 })
 module.exports={Cart};

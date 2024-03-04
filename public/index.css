@@ -1,5 +1,5 @@
 .navigation {
-    background-image: linear-gradient(to right, #FF7854 0%, #FF5079 100%)
+    background-color: #004e98;
 }
 nav a {
     text-decoration: none;
@@ -14,15 +14,11 @@ nav a {
 .navitems p {
     opacity: 0.3;
 }
-
-/* .navitems:hover{
-    background: rgb(214, 203, 203);
-} */
 .navitems {
     text-align: center;
 }
 .footer {
-    background-color: #c5375a;
+    background-color: #004e98;
 
 }
 
@@ -56,9 +52,12 @@ nav a {
     color: white;
     width: 100px;
 }
-.loginbtn:hover,.logoutbtn:hover,.viewcart:hover,.navbar-brand:hover,#Name:hover{
+.loginbtn:hover,.logoutbtn:hover,.viewcart:hover,.navbar-brand:hover{
  color: rgb(199, 202, 205);
  cursor: pointer;
+}
+#Name{
+    color: white;
 }
 .backicon{
      background-color:white;
@@ -82,6 +81,8 @@ nav a {
 .flexbox{
     display: grid;
   grid-template-columns:auto auto auto;
+  grid-column-gap: 50px;
+  margin:0 auto;
 }
 .footercontainer{
     margin-top: 50px;
@@ -93,28 +94,50 @@ nav a {
     color: white;
 }
 footer{
-    background-color: #c5375a;
+    background-color:#004e98;
     height: 150px;
-    
 }
-.gridlist .active1{
-    color: #FF5079;
+.gridlist,.active1{
+    color: #004e98;
   }
 .breadcrumb a{
     color: black;
 }
-.searchbar{
-    border: none;
-    border-radius: 0px;
-}
-.searchbutton{
-    height: 30px;
-    border: none;
-    border-color: transparent;
-}
+
 .hidden{
     display: none;
 }
 .card{
     width: 12rem;
 }
+.breadhidden{
+    display: none;
+}
+.search{
+  margin-left: 95px;
+    border: 1px black;
+}
+
+.searchname{
+    display: none;
+}
+.centercardimage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+.carousel-item::before{
+    filter: brightness(10%);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    opacity: 0.8;
+}
+  .listview{
+    display:grid;
+     margin-left: auto;
+     margin-right: auto; 
+  }
+  .carousel-item p{
+    filter: brightness(100%);
+  }
+

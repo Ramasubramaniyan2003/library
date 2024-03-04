@@ -84,3 +84,9 @@ li a {
     color: rgb(199, 202, 205);
     cursor: pointer;
    }
+#nav1{
+   font-size:30px;
+}
+.downloadbutton{
+     margin-top: -50%;
+}

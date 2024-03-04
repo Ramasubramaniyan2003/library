@@ -1,20 +1,20 @@
-.container-fluid.navigation
-  nav.navbar.navbar-expand-sm
-    .container.my-4
-      a.navbar-brand(href='/') MyBooks
-      input.searchbar(type="text" placeholder="search")
-      //- button(type="submit")
-       i.fa.fa-search.searchbutton
-      #collapsibleNavId.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mt-2
-        #login
-          // Modal trigger button
-          a#loginbtn.loginbtn(type='button' data-bs-toggle='modal' data-bs-target='#modalId')
-            | Login
-          a#viewcart.viewcart.mx-5(href='/viewcart')
-            | View cart
-          a#logoutbtn.logoutbtn(type='button' onclick='logout()')
-            | Logout
-          a#Name.Name.mx-2(onclick='profile()')
-          img(src='/icons/user.png' width='30px' ,height='30px')
-          .profile
+body
+  .container-fluid.navigation
+    nav.navbar.navbar-expand-sm
+      .container
+        a.navbar-brand(href='/')
+          img(src="/outer-img/logo.jpg" height="50px" width="65px")
+
+        #collapsibleNavId.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mt-2
+          #login
+            // Modal trigger button
+            a#loginbtn.loginbtn(type='button' data-bs-toggle='modal' data-bs-target='#modalId')
+              | Login
+            a#viewcart.viewcart.mx-5(href='/viewcart')
+              | View cart
+            a#logoutbtn.logoutbtn(type='button' onclick='logout()')
+              | Logout
+            img(src='/icons/user.png' width='30px' height='30px')
+            a#Name.Name.mx-2(onclick='profile()')
+            .profile

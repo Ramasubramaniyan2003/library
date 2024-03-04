@@ -19,30 +19,28 @@ for (let i = 0; i < btns.length; i++) {
         this.className += " active1";
     })
 }
-
 var elements = document.getElementsByClassName("flexbox");
 var card = document.getElementsByClassName('cardimage');
 //list view
 function listView() {
     elements[0].style.gridTemplateColumns = "auto";
-    // elements[0].style.width = "0px";
-    document.getElementById('list').style.color = "#FF5079"
+    document.getElementById('list').style.color = "#004e98"
     document.getElementById('grid').style.color = "black"
-    var card=document.getElementsByClassName('card');
-    var cardimg=document.getElementsByClassName('cardimg');
-   
-    for(let i=0;i<card.length;i++){
-    card[i].style.width="50%";
+    var card = document.getElementsByClassName('card');
+    for (let i = 0; i < card.length; i++) {
+        card[i].style.width = "95%";
     }
-    
 }
 //grid view
 function gridView() {
     elements[0].style.gridTemplateColumns = "auto auto auto";
+    var card = document.getElementsByClassName('card');
+    for (let i = 0; i < card.length; i++) {
+        card[i].style.width = "191px";
+    }
     document.getElementById('list').style.color = "black"
-    document.getElementById('grid').style.color = "#FF5079"
+    document.getElementById('grid').style.color = "#004e98"
 }
-
 // validate
 visitednum = 1;
 var signup_password;
@@ -82,11 +80,9 @@ function validate(id) {
         }
     }
     if (id == "register") {
-        var email = document.getElementById('signupemail').value;
         var password = document.getElementById('signuppassword').value;
         var retypepassword = document.getElementById('retypepassword').value;
         var demo = document.getElementById('demo');
-
         if (password != retypepassword) {
             alert("invalid password");
             return false;
@@ -103,10 +99,8 @@ function validate(id) {
     }
 
     if (id == "sign") {
-        var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         var demo = document.getElementById('demo');
-
         if (password.length < 6) {
             document.getElementById('demo').innerHTML = `<p>Password length should minimum 6 characters</p>`
             return false;
@@ -123,7 +117,6 @@ document.getElementById('form').addEventListener('submit', (event) => {
     event.preventDefault()
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
     const res = fetch('/authentication/login', {
         method: 'POST',
         headers: {
@@ -136,31 +129,31 @@ document.getElementById('form').addEventListener('submit', (event) => {
             if (res.success) {
                 login_and_logout();
                 var name = document.getElementById('Name');
-                var randomcard = document.getElementById('randomcard');
+                // var randomcard = document.getElementById('randomcard');
                 const name1 = email.substring(0, email.indexOf('@'));
                 name.innerHTML = `${name1}`;
                 localStorage.setItem("name", name1);
-                localStorage.setItem("id",res.id);
+                localStorage.setItem("id", res.id);
                 window.location.reload();
             }
             else {
-                alert("No User Found!");
+                alert(res.id);
             }
         }
         )
 })
 
 
-function login_and_logout() {
-    var loginbtn = document.getElementById('loginbtn');
-    var logoutbtn = document.getElementById('logoutbtn');
-    var viewcart = document.getElementById('viewcart');
-    var randomcard = document.getElementById('randomcard');
-    loginbtn.style.display = "none";
-    logoutbtn.style.display = "inline";
-    viewcart.style.display = "inline";
-    randomcard.style.display = "inline";
-}
+// function login_and_logout() {
+//     var loginbtn = document.getElementById('loginbtn');
+//     var logoutbtn = document.getElementById('logoutbtn');
+//     var viewcart = document.getElementById('viewcart');
+//     var randomcard = document.getElementById('randomcard');
+//     loginbtn.style.display = "none";
+//     logoutbtn.style.display = "inline";
+//     viewcart.style.display = "inline";
+//     randomcard.style.display = "inline";
+// }
 // signup
 document.getElementById('form1').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -207,8 +200,8 @@ function login_and_logout() {
     var loginbtn = document.getElementById('loginbtn');
     var logoutbtn = document.getElementById('logoutbtn');
     var viewcart = document.getElementById('viewcart');
-    var randomcard=document.getElementById("randomcard");
-    randomcard.style.display="inline";
+    var randomcard = document.getElementById("randomcard");
+    randomcard.style.display = "inline";
     loginbtn.style.display = "none";
     logoutbtn.style.display = "inline";
     viewcart.style.display = "inline";
@@ -219,8 +212,28 @@ function logout() {
     logoutbtn.style.display = "none";
     viewcart.style.display = "none";
     location.reload();
-    var randomcard=document.getElementById("randomcard");
-    randomcard.style.display="none";
+    var randomcard = document.getElementById("randomcard");
+    randomcard.style.display = "none";
 }
 var homenav = document.getElementById('homenav');
 var homenavi = sessionStorage.removeItem("home", homenav);
+sessionStorage.removeItem("description", 'Description');
+sessionStorage.removeItem("homenav");
+//carouselimage
+var recenttrending = ['/images/history/book3.jpg',
+    '/images/history/book2.jpg',
+    '/images/action/book1.jpg',
+    '/images/humor/book2.jpg',
+    '/images/classic/book3.jpg',
+    '/images/adventure/book2.jpg',
+    '/images/gk/book1.jpg',
+    '/images/action/book3.jpg'];
+
+var bookcarouselheading = document.getElementsByClassName('bookcarouselheading');
+console.log(bookcarouselheading[0])
+var bookcarouselimage = document.getElementsByClassName('bookcarouselimage');
+for (let i in bookcarouselimage) {
+    bookcarouselimage[i].innerHTML = `<img src=${recenttrending[i]} alt='book' height="270px">`
+
+}
+// bookcarouselheading[0].innerHTML='ok';

@@ -9,7 +9,6 @@
 .center {
     display: flex;
     justify-content: center;
-
 }
 input,.logbtn,#register,#signup_account{
     width: 350px;
@@ -18,9 +17,9 @@ input,.logbtn,#register,#signup_account{
     /* border: solid 2px rgb(136, 103, 103); */
 }
 .continue {
-    background-color:#90d410;
+    background-color:#4E598C;
     color: white;
-    border-color: #a0ef0e;
+    border-color: #4E598C;
     border-radius: 5px;
 }
 
@@ -31,20 +30,20 @@ input,.logbtn,#register,#signup_account{
 
 .createaccount {
     color: #fff;
-    background-color: #46ab09;
-    border-color: #3c9308;
+    background-color: #4E598C;
+    border-color: #4E598C;
     border-radius: 5px;
 }
 
 .continue:hover {
     color: #fff;
-    background-color: #a2ec1a;
+    background-color: #3b4262;
 }
 
 .createaccount:hover {
     color: #fff;
-    background-color: #327b06;
-    border-color: #245905;
+    background-color: #3b4262;
+    border-color: #4E598C;
 }
 
 .hidden {
@@ -53,4 +52,5 @@ input,.logbtn,#register,#signup_account{
 #modallogin,#modalsignup{
     color: black;
 }
+
 

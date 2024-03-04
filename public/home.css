@@ -8,7 +8,7 @@ li {
 }
 
 li:hover {
-    background-color: rgb(238, 238, 238);
+   cursor: pointer;
 }
 .nav {
     /* top: 0px;
@@ -107,14 +107,26 @@ li:hover {
 .listgrid{
     text-align: end;
   } 
-  .addtocart,.back{
-    cursor: pointer;
-  }
-  .loginbtn:hover,.logoutbtn:hover,.viewcart:hover,.navbar-brand:hover,#Name:hover{
-    color: rgb(199, 202, 205);
-    cursor: pointer;
+   .pophidden{
+    display:none;
    }
-   .addtocart{
+   .addtocartbutton button{
+    border: none;
+    color: white;
+    background-color: green;
+    border-radius: 50px;
+    padding: 5px 15px 5px 15px;
+   }
+   .addtocartdownload a{
+    border: none;
+    color: white;
+    background-color:rgb(16, 16, 118);
+    border-radius: 50px;
+    padding: 5px 16px 5px 16px;
+    margin-right: 15%;
+   }
+   
+/* .addtocartdown{
     pointer-events: none;
-    opacity: 0.5;
-   }
+    opacity: 0.3;
+   } */

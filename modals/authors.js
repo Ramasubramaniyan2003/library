@@ -18,13 +18,4 @@ const Author=sq.define('Authors',{
            type:DataTypes.STRING
     }
 })
-Author.sync().then(
-    ()=>{
-        console.log("Auuthor table is created");
-    }
-).catch(
-    (e)=>{
-        console.log("error creating/accessing table:",e)
-    }
-)
 module.exports={Author};
